@@ -1,15 +1,15 @@
 # 🚦 Activity 3 – Speed Limit Recognition System
 
-This activity focuses on detecting **speed limit signs** (20 km/h through 120 km/h) using a Convolutional Neural Network on the **GTSRB speed-limit subset**.
+This activity focuses on detecting **speed limit signs** (20 km/h through 120 km/h) using a Convolutional Neural Network on the **TrafficSign speed-limit subset**.
 
 ---
 
 ## 📌 Description
 
-ADAS systems can warn drivers when they exceed legal speed limits. In this activity, we reuse the **speed-limit** classes (IDs 0–7) from the full GTSRB dataset to train a model that recognizes only speed‑limit signs.
+ADAS systems can warn drivers when they exceed legal speed limits. In this activity, we reuse the **speed-limit** classes (IDs 0–7) from the full TrafficSign dataset to train a model that recognizes only speed‑limit signs.
 
 ### Centralized Data & Models
-- **Data source:** `data/GTSRB/` (full dataset) and `data/SpeedLimit/` (subset for speed-limit)  
+- **Data source:** `data/TrafficSign/` (full dataset) and `data/SpeedLimit/` (subset for speed-limit)  
 - **Models:** all trained models stored under `models/speed_limit/`
 
 ---
@@ -18,7 +18,7 @@ ADAS systems can warn drivers when they exceed legal speed limits. In this activ
 
 - Use **Python** and **OpenCV** for image processing.  
 - Implement a **CNN** (or reuse the architecture from Activity 2) for speed‑limit classification.  
-- Prepare the subset by extracting classes 0–7 from GTSRB:  
+- Prepare the subset by extracting classes 0–7 from TrafficSign:  
   ```bash
   python prepare_speed_limit_data.py
   ```
@@ -32,7 +32,7 @@ ADAS systems can warn drivers when they exceed legal speed limits. In this activ
 
 ```
 activity_3_speed_limit_recognition/
-├── prepare_speed_limit_data.py       # create data/SpeedLimit from data/GTSRB
+├── prepare_speed_limit_data.py       # create data/SpeedLimit from data/TrafficSign
 ├── speed_limit_trainer.py            # trains model; checkpoints to models/speed_limit/
 ├── speed_limit_tester.py             # evaluates test accuracy; confusion matrix
 ├── speed_limit_predictor.py          # predicts a single image; displays result
@@ -60,7 +60,7 @@ pip install -r requirements.txt
    ```bash
    python prepare_speed_limit_data.py
    ```
-   - Reads from `data/GTSRB/Train/0–7` and `data/GTSRB/Test/0–7`  
+   - Reads from `data/TrafficSign/Train/0–7` and `data/TrafficSign/Test/0–7`  
    - Writes into `data/SpeedLimit/Train/0–7` and `data/SpeedLimit/Test/0–7`
 
 2. **Train model**:
@@ -98,7 +98,7 @@ pip install -r requirements.txt
 
 ## 📚 References
 
-- [GTSRB Dataset](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign)  
+- [TrafficSign Dataset](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/TrafficSign-german-traffic-sign)  
 - Activity 2 CNN architecture and best practices  
 - [OpenCV Python Docs](https://docs.opencv.org/)
 

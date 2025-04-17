@@ -11,7 +11,7 @@ MODEL_PATH = os.path.join('..', 'model', 'traffic_sign',
 # Load trained model
 model = tf.keras.models.load_model(MODEL_PATH)
 
-# GTSRB official class labels
+# TrafficSign official class labels
 class_labels = [
     "Speed limit (20km/h)", "Speed limit (30km/h)", "Speed limit (50km/h)",
     "Speed limit (60km/h)", "Speed limit (70km/h)", "Speed limit (80km/h)",

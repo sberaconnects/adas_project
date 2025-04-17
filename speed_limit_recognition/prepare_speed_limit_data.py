@@ -3,8 +3,8 @@ import shutil
 
 # Centralized data root
 DATA_ROOT = os.path.join('..', 'data')
-GTSRB_TRAIN_PATH = os.path.join(DATA_ROOT, 'GTSRB', 'Train')
-GTSRB_TEST_PATH = os.path.join(DATA_ROOT, 'GTSRB', 'Test')
+GTSRB_TRAIN_PATH = os.path.join(DATA_ROOT, 'TrafficSign', 'Train')
+GTSRB_TEST_PATH = os.path.join(DATA_ROOT, 'TrafficSign', 'Test')
 DEST_BASE_PATH = os.path.join(DATA_ROOT, 'SpeedLimit')
 
 # Destination dirs for speed-limit subset
