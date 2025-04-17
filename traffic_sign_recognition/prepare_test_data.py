@@ -2,10 +2,11 @@ import os
 import pandas as pd
 import shutil
 
-# Paths
-CSV_PATH = "./data/GTSRB/Test.csv"
-IMG_BASE_PATH = "./data/GTSRB/"
-OUTPUT_PATH = "./data/GTSRB/Test/"
+# Centralized Paths
+DATA_ROOT = os.path.join('..', 'data')
+CSV_PATH = os.path.join(DATA_ROOT, 'TrafficSign', 'Test.csv')
+IMG_BASE_PATH = os.path.join(DATA_ROOT, 'TrafficSign')
+OUTPUT_PATH = os.path.join(DATA_ROOT, 'TrafficSign', 'Test')
 
 # Load CSV
 df = pd.read_csv(CSV_PATH)

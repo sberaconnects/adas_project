@@ -39,20 +39,14 @@ Implemented a Convolutional Neural Network (CNN) with:
 
 ---
 
+### Centralized Data & Models
+- **Data source:** `data/GTSRB/` (full dataset) and `data/TrafficSign/`
+- **Models:** all trained models stored under `model/traffic_sign/`
+
 ## 🗂️ Project Structure
 
 ```
 activity_2_traffic_sign_recognition/
-│
-├── data/
-│   └── GTSRB/
-│       ├── Train/
-│       ├── Test.csv
-│       ├── Test/0/, Test/1/, ..., Test/42/
-│
-├── model/
-│   └── traffic_sign_cnn_model.keras
-│
 ├── traffic_sign_trainer.py
 ├── traffic_sign_tester.py
 ├── traffic_sign_predictor.py

@@ -9,8 +9,11 @@ import seaborn as sns
 # Constants
 IMG_HEIGHT, IMG_WIDTH = 32, 32
 NUM_CLASSES = 43
-MODEL_PATH = "./model/traffic_sign_cnn_model.keras"
-TEST_DATA_PATH = "./data/GTSRB/Test"
+
+# Centralized Paths
+MODEL_PATH = os.path.join('..', 'model',
+                          'traffic_sign', 'best_traffic_sign_model.keras')
+TEST_DATA_PATH = os.path.join('..', 'data', 'TrafficSign', 'Test')
 
 # Load model
 model = load_model(MODEL_PATH)

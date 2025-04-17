@@ -4,8 +4,11 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+# Centralized Paths
+MODEL_PATH = os.path.join('..', 'model', 'traffic_sign',
+                          'best_traffic_sign_model.keras')
+
 # Load trained model
-MODEL_PATH = "./model/traffic_sign_cnn_model.keras"
 model = tf.keras.models.load_model(MODEL_PATH)
 
 # GTSRB official class labels

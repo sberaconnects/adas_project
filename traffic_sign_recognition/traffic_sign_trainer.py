@@ -9,10 +9,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer
 import cv2
 
+# Centralized Paths
+# Centralized paths
+DATA_ROOT = os.path.join("..", "data", "TrafficSign")
+MODEL_ROOT = os.path.join('..', 'model', 'traffic_sign')
+os.makedirs(MODEL_ROOT, exist_ok=True)
+
 # Constants
 IMG_HEIGHT, IMG_WIDTH = 32, 32
 NUM_CLASSES = 43
-DATASET_PATH = "./data/GTSRB/Train"
+DATASET_PATH = os.path.join(DATA_ROOT, 'Train')
 
 # Load images and labels
 
@@ -77,7 +83,7 @@ model.compile(loss='categorical_crossentropy',
 
 # Callbacks
 checkpoint = tf.keras.callbacks.ModelCheckpoint(
-    filepath="./model/best_traffic_sign_model.keras",
+    filepath=os.path.join(MODEL_ROOT, "best_traffic_sign_model.keras"),
     monitor='val_accuracy',
     save_best_only=True,
     verbose=1
@@ -92,7 +98,7 @@ history = model.fit(
 )
 
 # Save final model
-model.save("./model/traffic_sign_cnn_model.keras")
+model.save(os.path.join(MODEL_ROOT, "traffic_sign_cnn_model.keras"))
 print("Model saved successfully.")
 
 # Plot training history
@@ -104,4 +110,3 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.grid()
 plt.savefig("training_accuracy.png")
-# plt.show()  # uncomment only if GUI is available
